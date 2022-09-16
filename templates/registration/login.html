@@ -1,0 +1,13 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+
+<form method="post" style="width: 30%; margin-top: 15%;margin-left: 35%;">
+    {% csrf_token %}
+    {{ form }}
+    <button type="submit" class="btn btn-primary btn-block mb-4">Login</button>
+  
+  </form>
+{% endblock %}

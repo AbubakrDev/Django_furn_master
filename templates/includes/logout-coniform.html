@@ -1,0 +1,45 @@
+{% load static %}
+<div class="logout-coniform">
+    <img src="{% static 'logo/logout-logo.png' %}" alt="error">
+    <p>Coniform exit?
+    </p>
+    <a href="{% url 'furn:logout-link' %}" class="btn btn-info btn-lg logout-button">
+        <span class="glyphicon glyphicon-log-out"></span> Log out
+    </a>
+</div>
+
+<style>
+    .logout-coniform{
+        left: 42%;
+        width: 16%;
+        top: 250px;
+        z-index: 999;
+        height: 300px;
+        display: none;
+        position: fixed;
+        padding: 50px 30px;
+        text-align: center;
+        background-color: royalblue;
+    }
+    .logout-coniform h1{
+        margin-top: 20px;
+    }
+    .logout-coniform *{
+        color: white;
+    }
+    .logout-coniform img{
+        width: 70px;
+        margin-top: 10px;
+        border-radius: 50%;
+    }
+    .logout-button{
+        margin-top: 20px;
+    }
+    /* .logout-button:hover{
+        margin: auto !important;
+        padding: auto !important;
+    } */
+    .logout-coniform p{
+        margin-top: 10px;
+    }
+</style>

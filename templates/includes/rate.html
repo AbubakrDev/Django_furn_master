@@ -1,0 +1,49 @@
+<!DOCTYPE html>{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        .checked {
+            color: rgb(217, 255, 0);
+        }
+
+        .fa-3x {
+            border: none;
+            background: none;
+        }
+
+        .btns {
+            background-color: inherit !important;
+            border: 0 !important;
+        }
+    </style>
+    {% if rate %}
+    <img src="{{ rate.img.url }}" alt="" width="500" height="400">
+    <a href="{% url 'furn:rate' %}"><button>Next</button></a>
+    
+    <form method="post" class="rate-form" id="{{ rate.id }}">
+        {% csrf_token %}
+        <button type="submit" class="fa fa-star fa-3x btns " id="first"></button>
+        <button type="submit" class="fa fa-star fa-3x btns " id="second"></button>
+        <button type="submit" class="fa fa-star fa-3x btns " id="third"></button>
+        <button type="submit" class="fa fa-star fa-3x btns" id="fourth"></button>
+        <button type="submit" class="fa fa-star fa-3x btns" id="fifth"></button>
+        <div id="confirm-box"></div>
+    </form>
+    <script src="{% static 'js/rate.js' %}"></script>
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    {% else %}
+    <h1>Rate qilgani rasm qolmadi!</h1>
+    {% endif %}
+</body>
+
+</html>
